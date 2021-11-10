@@ -1,3 +1,4 @@
+import 'package:batch_b_demo/demo_page.dart';
 import 'package:flutter/material.dart';
 
 String _email= "suha@gmail.com";
@@ -48,6 +49,9 @@ class _LogInState extends State<LogIn> {
                       if(text==null || text.isEmpty){
                         return "This field is empty";
                       }
+                      else if(text!=_email){
+                        return "Please enter correct email";
+                      }
                     },
                     cursorColor: Colors.purple,
                     decoration: InputDecoration(
@@ -64,6 +68,9 @@ class _LogInState extends State<LogIn> {
                     validator: (text){
                       if(text==null || text.isEmpty){
                         return "This field is empty";
+                      }
+                      else if(text!=_password){
+                        return "Please enter correct password";
                       }
                     },
                     obscureText: true,
@@ -82,7 +89,11 @@ class _LogInState extends State<LogIn> {
                   ),
                   ElevatedButton(
                       onPressed: (){
-                        _formKey.currentState!.validate();
+                       if( _formKey.currentState!.validate()){
+                         Navigator.push(context,
+                         MaterialPageRoute(builder: (context)
+                         =>DemoPage()));
+                       }
                       },
                       child: Text("Log In")
                   ),

@@ -34,9 +34,9 @@ final navigatorKey= GlobalKey<NavigatorState>();
           MenuItem('Demo Page',
               icon: Icons.ac_unit,
               onTap: (){
-            navigatorKey.currentState!.push(
-              MaterialPageRoute(builder: (context)=>DemoPage())
-            );
+            // navigatorKey.currentState!.push(
+            //   MaterialPageRoute(builder: (context)=>DemoPage())
+            // );
               }),
           MenuItem('Favourite',
               icon: Icons.visibility,
@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: (){
                 Navigator.push(context,
                     MaterialPageRoute(builder:
-                        (context)=>DemoPage()));
+                        (context)=>LogIn()));
               },
               child: Text("Go To Demo page")),
           InkWell(
